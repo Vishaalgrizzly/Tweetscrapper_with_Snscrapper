@@ -34,10 +34,10 @@ with st.form("my_form"):
         for i, tweet in enumerate(sntwitter.TwitterSearchScraper(passing).get_items()):
             if i > maxTweets:
                 break
-            tweets_list1.append([tweet.date, tweet.id, tweet.content, tweet.user.username, tweet.url, tweet.replyCount,
+            tweets_list1.append([tweet.date, tweet.id, tweet.url, tweet.content, tweet.user.username, tweet.replyCount,
                                  tweet.retweetCount, tweet.lang, tweet.likeCount])
 
-tweets_df1 = pd.DataFrame(tweets_list1, columns=['DateTime', 'Tweet_ID', 'Content', 'User_Name', 'URL', 'Reply_count',
+tweets_df1 = pd.DataFrame(tweets_list1, columns=['DateTime', 'Tweet_ID', 'URL', 'Content', 'User_Name', 'Reply_count',
                                                  'Re_Tweet_Count', 'Language', 'Like_Count'])
 st.write(tweets_df1)
 
